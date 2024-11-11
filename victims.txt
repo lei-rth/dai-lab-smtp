@@ -1,2 +1,13 @@
 anthony.ledda@heig-vd.ch
 lei.rothenbuhler@heig-vd.ch
+john.doe1@example.com
+jane.smith2@example.com
+michael.jones3@example.com
+emily.brown4@example.com
+david.wilson5@example.com
+sarah.miller6@example.com
+robert.taylor7@example.com
+olivia.lee8@example.com
+william.moore9@example.com
+lucy.white10@example.com
+lucy.white11@example.com

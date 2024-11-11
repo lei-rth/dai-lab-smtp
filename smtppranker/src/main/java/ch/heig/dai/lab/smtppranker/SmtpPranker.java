@@ -15,10 +15,14 @@ public class SmtpPranker {
     }
 
     public void run() {
-        String victimsContent = new FileReader().readFile(new File(victims), StandardCharsets.UTF_8);
+        String[] victimsContent = new FileReader().readByGroup(new File(victims), StandardCharsets.UTF_8, groups);
+
         String messagesContent = new FileReader().readFile(new File(messages), StandardCharsets.UTF_8);
 
         System.out.println(victimsContent);
-        System.out.println(messagesContent);
+        for (String victim : victimsContent) {
+            System.out.println(victim);
+            System.out.println();
+        }
     }
 }
