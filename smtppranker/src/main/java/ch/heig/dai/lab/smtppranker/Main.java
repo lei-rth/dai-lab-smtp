@@ -8,5 +8,7 @@ public class Main {
         }
 
         SmtpPranker pranker = new SmtpPranker(args[0], args[1], Integer.parseInt(args[2]));
+
+        pranker.run();
     }
 }
