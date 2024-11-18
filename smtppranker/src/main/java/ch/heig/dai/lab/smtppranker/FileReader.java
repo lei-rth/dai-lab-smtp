@@ -40,21 +40,37 @@ public class FileReader {
             String[] lines = content.split("\n");
             int totalLines = lines.length;
 
+            for (String line : lines) {
+                if (!this.validateEmail(line)) {
+                    throw new IllegalArgumentException("Invalid email address: " + line);
+                }
+            }
+
             if (group > 0 && group <= totalLines) {
                 Random random = new Random();
                 String[] victimGroups = new String[group];
-                int end = 0;
+                int start = 0;
 
                 for (int i = 0; i < group; i++) {
                     int groupSize = random.nextInt(4) + 2;
-                    int start = end;
-                    end = start + groupSize;
-                    victimGroups[i] = String.join("\n", Arrays.copyOfRange(lines, start, end));
+                    if (i == group - 1 && groupSize + start > totalLines) {
+                        victimGroups[i] = String.join("\n", Arrays.copyOfRange(lines, start, totalLines));
+                    } else {
+                        int end = Math.min(start + groupSize, totalLines - (group - i - 1));
+                        victimGroups[i] = String.join("\n", Arrays.copyOfRange(lines, start, end));
+                        start = end;
+                    }
                 }
 
                 return victimGroups;
             }
         }
         return new String[0];
+    }
+
+    public boolean validateEmail(String email) {
+        String emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        
+        return email.matches(emailPattern);
     }
 }
