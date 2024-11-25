@@ -2,7 +2,7 @@ include .env
 export $(shell sed 's/=.*//' .env)
 
 dev: 
-	docker compose up -d --remove-orphans
+	docker compose pull && docker compose up -d --remove-orphans
 
 down:
 	docker compose down
