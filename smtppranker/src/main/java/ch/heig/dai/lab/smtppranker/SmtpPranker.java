@@ -5,7 +5,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 import java.io.BufferedReader;
-import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
@@ -29,25 +30,29 @@ public class SmtpPranker {
         int smtpPort = 1025;
 
         try (Socket socket = new Socket(smtpHost, smtpPort);
-                PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
+                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(socket.getInputStream()))) {
 
             reader.readLine();
             // Send HELO command
-            writer.println("HELO " + smtpHost);
+            writer.write("HELO " + smtpHost + "\r\n");
+            writer.flush();
 
             // Send MAIL FROM command
-            writer.println("MAIL FROM: <" + sender + ">");
+            writer.write("MAIL FROM: <" + sender + ">\r\n");
+            writer.flush();
             reader.readLine();
 
             // Send RCPT TO command
             for (String victim : victims) {
-                writer.println("RCPT TO: <" + victim + ">");
+                writer.write("RCPT TO: <" + victim + ">\r\n");
+                writer.flush();
                 reader.readLine();
             }
             // Send DATA command
-            writer.println("DATA");
+            writer.write("DATA\r\n");
+            writer.flush();
             reader.readLine();
 
             // Send email body
@@ -63,7 +68,8 @@ public class SmtpPranker {
             reader.readLine();
 
             // Send QUIT command
-            writer.println("QUIT");
+            writer.write("QUIT\r\n");
+            writer.flush();
             reader.readLine();
         } catch (Exception e) {
             e.printStackTrace();
