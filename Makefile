@@ -7,6 +7,9 @@ dev:
 down:
 	docker compose down
 
+install:
+	mvn --file ./smtppranker/pom.xml clean install
+
 build:
 	mvn --file ./smtppranker/pom.xml package
 

@@ -3,6 +3,8 @@ package ch.heig.dai.lab.smtppranker;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class FileReader {
@@ -38,6 +40,7 @@ public class FileReader {
         String content = readFile(file, encoding);
         if (content != null) {
             String[] lines = content.split("\n");
+            List<String> emails = new ArrayList<String>(Arrays.asList(lines));
             int totalLines = lines.length;
 
             for (String line : lines) {
@@ -53,13 +56,15 @@ public class FileReader {
 
                 for (int i = 0; i < group; i++) {
                     int groupSize = random.nextInt(4) + 2;
-                    if (i == group - 1 && groupSize + start > totalLines) {
-                        victimGroups[i] = String.join("\n", Arrays.copyOfRange(lines, start, totalLines));
-                    } else {
-                        int end = Math.min(start + groupSize, totalLines - (group - i - 1));
-                        victimGroups[i] = String.join("\n", Arrays.copyOfRange(lines, start, end));
-                        start = end;
+                    int end = start + groupSize;
+                    
+                    List<String> subList = new ArrayList<>();
+                    for (int j = start; j < end; j++) {
+                        subList.add(emails.get(j % emails.size()));
                     }
+
+                    victimGroups[i] = String.join("\n", subList);
+                    start = end;
                 }
 
                 return victimGroups;
