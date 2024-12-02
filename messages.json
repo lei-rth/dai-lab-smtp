@@ -1,40 +1,38 @@
-{
-  "messages": [
-    {
-      "subject": "⚠️ ALERTE SÉCURITÉ - Action Requise sous 24h",
-      "content": "Votre compte sera supprimé dans 24 heures en raison d'une activité suspecte. Pour éviter cela, vérifiez immédiatement votre identité en cliquant ici : [lien frauduleux]."
-    },
-    {
-      "subject": "🔥 FÉLICITATIONS - Vous avez gagné un iPhone 15 Pro Max !",
-      "content": "Félicitations ! Vous avez gagné un iPhone 15 Pro Max GRATUIT ! Pour réclamer votre prix, entrez vos informations personnelles ici : [lien frauduleux]."
-    },
-    {
-      "subject": "💻 ALERTE - Accès non autorisé détecté",
-      "content": "Nous avons détecté un accès non autorisé à votre compte bancaire. Veuillez vérifier vos informations pour sécuriser votre compte : [lien frauduleux]."
-    },
-    {
-      "subject": "🛑 URGENT - 23 virus détectés sur votre ordinateur",
-      "content": "Votre ordinateur est infecté par 23 virus dangereux ! Cliquez ici pour télécharger un logiciel de protection GRATUIT et les supprimer immédiatement : [lien frauduleux]."
-    },
-    {
-      "subject": "🔐 Netflix - Tentative de connexion suspecte",
-      "content": "Une tentative de connexion non autorisée a été détectée sur votre compte Netflix. Confirmez vos informations pour éviter une suspension : [lien frauduleux]."
-    },
-    {
-      "subject": "⚠️ URGENT - Problème de livraison de colis",
-      "content": "Votre colis ne peut pas être livré en raison d'informations incorrectes. Mettez à jour vos coordonnées ici : [lien frauduleux]."
-    },
-    {
-      "subject": "🎮 PlayStation Plus - Abonnement GRATUIT gagné !",
-      "content": "Félicitations ! Vous avez gagné un abonnement GRATUIT de 12 mois à PlayStation Plus. Cliquez pour activer votre récompense : [lien frauduleux]."
-    },
-    {
-      "subject": "📧 IMPORTANT - Désactivation imminente de votre email",
-      "content": "Votre adresse e-mail sera désactivée dans 48 heures. Confirmez votre mot de passe pour éviter la perte de données : [lien frauduleux]."
-    },
-    {
-      "subject": "🔑 ACTION REQUISE - Carte de crédit expirée",
-      "content": "Votre carte de crédit a expiré. Mettez à jour vos informations de paiement ici : [lien frauduleux]."
-    }
-  ]
-}
+[
+  {
+    "subject": "⚠️ ALERTE SÉCURITÉ - Action Requise sous 24h",
+    "content": "Votre compte sera supprimé dans 24 heures en raison d'une activité suspecte. Pour éviter cela, vérifiez immédiatement votre identité en cliquant ici : [lien frauduleux]."
+  },
+  {
+    "subject": "🔥 FÉLICITATIONS - Vous avez gagné un iPhone 15 Pro Max !",
+    "content": "Félicitations ! Vous avez gagné un iPhone 15 Pro Max GRATUIT ! Pour réclamer votre prix, entrez vos informations personnelles ici : [lien frauduleux]."
+  },
+  {
+    "subject": "💻 ALERTE - Accès non autorisé détecté",
+    "content": "Nous avons détecté un accès non autorisé à votre compte bancaire. Veuillez vérifier vos informations pour sécuriser votre compte : [lien frauduleux]."
+  },
+  {
+    "subject": "🛑 URGENT - 23 virus détectés sur votre ordinateur",
+    "content": "Votre ordinateur est infecté par 23 virus dangereux ! Cliquez ici pour télécharger un logiciel de protection GRATUIT et les supprimer immédiatement : [lien frauduleux]."
+  },
+  {
+    "subject": "🔐 Netflix - Tentative de connexion suspecte",
+    "content": "Une tentative de connexion non autorisée a été détectée sur votre compte Netflix. Confirmez vos informations pour éviter une suspension : [lien frauduleux]."
+  },
+  {
+    "subject": "⚠️ URGENT - Problème de livraison de colis",
+    "content": "Votre colis ne peut pas être livré en raison d'informations incorrectes. Mettez à jour vos coordonnées ici : [lien frauduleux]."
+  },
+  {
+    "subject": "🎮 PlayStation Plus - Abonnement GRATUIT gagné !",
+    "content": "Félicitations ! Vous avez gagné un abonnement GRATUIT de 12 mois à PlayStation Plus. Cliquez pour activer votre récompense : [lien frauduleux]."
+  },
+  {
+    "subject": "📧 IMPORTANT - Désactivation imminente de votre email",
+    "content": "Votre adresse e-mail sera désactivée dans 48 heures. Confirmez votre mot de passe pour éviter la perte de données : [lien frauduleux]."
+  },
+  {
+    "subject": "🔑 ACTION REQUISE - Carte de crédit expirée",
+    "content": "Votre carte de crédit a expiré. Mettez à jour vos informations de paiement ici : [lien frauduleux]."
+  }
+]
