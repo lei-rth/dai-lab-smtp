@@ -34,6 +34,13 @@ public class SmtpPranker {
         this.groups = groups;
     }
 
+    /**
+     * Send an email to a list of victims with a given message.
+     * 
+     * @param sender  the sender of the email
+     * @param victims the list of victims to send the email to
+     * @param message the message to send
+     */
     public void send(String sender, List<String> victims, Message message) {
         try (Socket socket = new Socket(smtpHost, smtpPort);
                 BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -82,6 +89,14 @@ public class SmtpPranker {
         }
     }
 
+    /**
+     * Reads the victims and messages files and sends an email to each group of victims.
+     * 
+     * The email body is chosen randomly from the messages file.
+     * 
+     * If there are no victims or messages found, the run method will exit without doing anything.
+     * 
+     */
     public void run() {
         List<String> victims;
         List<Message> messages;
@@ -103,8 +118,9 @@ public class SmtpPranker {
         }
 
         List<String> senders = new ArrayList<>(groups);
-        List<List<String>> victimsByGroup = PrankerUtil.splitVictimsByGroup(victims, senders, groups);
+        List<List<String>> victimsByGroup = PrankerUtil.splitVictimsByGroup(victims, senders, groups); // Split victims into groups
 
+        // Send emails
         Random random = new Random();
         for (int i = 0; i < groups; i++) {
             this.send(senders.get(i), victimsByGroup.get(i), messages.get(random.nextInt(messages.size())));
