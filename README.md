@@ -15,6 +15,7 @@
     - [SMTP Communication Example](#smtp-communication-example)
     - [Configuration Files](#configuration-files)
     - [Environment Configuration](#environment-configuration)
+    - [Use Makefile](#use-makefile)
   - [References](#references)
 
 ## Requirements
@@ -149,8 +150,20 @@ The SMTP connection can be configured through the `.env` file:
 
 The number of groups can be configured through the `NUMBER_GROUPS` environment variable.
 
+### Use Makefile
+
+When developing, you can use [Makefile](https://en.wikipedia.org/wiki/Make_(software)) for doing the following operations :
+
+| Name    | Description                         |
+| ------- | ----------------------------------- |
+| dev     | Create and start containers         |
+| down    | Stop all containers services        |
+| install | Install all maven dependencies      |
+| build   | Compile the project as jar file     |
+| run     | Run the project with .env variables |
+| clean   | Clean directories for reset         |
+
 ## References
 ----------
 
 * The [SMTP RFC](<https://tools.ietf.org/html/rfc5321#appendix-D>), and in particular the [example scenario](<https://tools.ietf.org/html/rfc5321#appendix-D>)
-* The [mailtrap](<https://mailtrap.io/>) online service for testing SMTP

@@ -4,3 +4,4 @@
 *.class
 *.jar
 .env
+**/dependency-reduced-pom.xml
