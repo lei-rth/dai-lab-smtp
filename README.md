@@ -3,31 +3,46 @@
 ## Table of contents
 - [SMTP Pranker](#smtp-pranker)
   - [Table of contents](#table-of-contents)
-  - [Setting up non persistent demo](#setting-up-non-persistent-demo)
+  - [Requirements](#requirements)
+  - [Getting started](#getting-started)
+    - [Clone the code](#clone-the-code)
+    - [Deploy the code](#deploy-the-code)
     - [Setup your Environment file](#setup-your-environment-file)
     - [Execute demo](#execute-demo)
   - [References](#references)
-## Setting up non persistent demo
 
+## Requirements
+
+* A Linux distribution or WSL
+* Git
+* Docker and Docker Compose
+* Java 21
+* Maven
+
+## Getting started
 This will bring up a demo instance
 
-Clone the code
+### Clone the code
 
 ```bash
 git clone git@github.com:lei-rth/dai-lab-smtp.git && cd dai-lab-smtp
 ```
 
-Deploy the code
+### Deploy the code
 
 ```bash
-# Copy default config
+# Install "make" if not already installed
+sudo apt-get install make 
+
+# Copy default configuration
 cp -n .env.example .env
 
-# Change the SMTP host and port in the .env file
-SMTP_HOST=localhost # or your smtp host
-SMTP_PORT=1025 # or your smtp port
 
-# Start the stack
+# Change the SMTP host and port in the .env file if needed
+SMTP_HOST=localhost # by default
+SMTP_PORT=1025 # by default
+
+# Start the stack 
 make dev
 ```
 
@@ -38,8 +53,8 @@ Mock server is available at http://localhost:1080
 Following variable setup in your [.env](.env) file will setup the demo environment for you
 
 ```ini
-VICTIMS_LIST=victims.txt
-MESSAGES_LIST=messages.txt
+VICTIMS_LIST=victims.json
+MESSAGES_LIST=messages.json
 NUMBER_GROUPS=2
 ```
 
