@@ -23,6 +23,10 @@ Deploy the code
 # Copy default config
 cp -n .env.example .env
 
+# Change the SMTP host and port in the .env file
+SMTP_HOST=localhost # or your smtp host
+SMTP_PORT=1025 # or your smtp port
+
 # Start the stack
 make dev
 ```
